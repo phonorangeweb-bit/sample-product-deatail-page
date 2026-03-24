@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Apple iPhone 16 Pro 256GB — Phonorange</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" media="print" onload="this.media='all'">
+<style>
+:root {
+  --bg: #0a0a0b;
+  --bg2: #111113;
+  --bg3: #18181c;
+  --bg4: #1f1f25;
+  --border: rgba(255,255,255,0.07);
+  --border2: rgba(255,255,255,0.12);
+  --text: #f0eeea;
+  --text2: #9a9890;
+  --text3: #5a5856;
+  --accent: #e8b86d;
+  --accent2: #c4904a;
+  --green: #4caf7d;
+  --red: #e55;
+  --radius: 16px;
+  --radius-sm: 10px;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 15px;
+  line-height: 1.6;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* ── NAV ── */
+.nav {
+  position: sticky; top: 0; z-index: 100;
+  background: rgba(10,10,11,0.85);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+  padding: 0 24px;
+  display: flex; align-items: center; gap: 16px; height: 56px;
+}
+.nav-logo {
+  font-family: 'Syne', sans-serif;
+  font-weight: 800; font-size: 18px;
+  color: var(--text); text-decoration: none;
+  letter-spacing: -0.02em;
+}
+.nav-logo span { color: var(--accent); }
+.nav-breadcrumb {
+  display: flex; align-items: center; gap: 8px;
+  font-size: 13px; color: var(--text3);
+  margin-left: 8px;
+}
+.nav-breadcrumb a { color: var(--text2); text-decoration: none; transition: color .2s; }
+.nav-breadcrumb a:hover { color: var(--text); }
+.nav-breadcrumb span { color: var(--text3); }
+.nav-right { margin-left: auto; display: flex; gap: 10px; align-items: center; }
+.nav-btn {
+  padding: 7px 16px; border-radius: 99px;
+  font-size: 13px; font-weight: 500; cursor: pointer;
+  border: 1px solid var(--border2); background: transparent;
+  color: var(--text2); transition: all .2s;
+  font-family: 'DM Sans', sans-serif;
+}
+.nav-btn:hover { background: var(--bg3); color: var(--text); }
+.nav-btn.primary {
+  background: var(--accent); color: #1a1000;
+  border-color: var(--accent);
+}
+.nav-btn.primary:hover { background: #f0c87a; }
+
+/* ── HERO LAYOUT ── */
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 420px;
+  gap: 0;
+  min-height: calc(100vh - 56px);
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 48px 24px 48px;
+  align-items: start;
+}
+
+/* ── IMAGE GALLERY ── */
+.gallery { position: sticky; top: 80px; }
+.gallery-main {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  aspect-ratio: 1;
+  display: flex; align-items: center; justify-content: center;
+  position: relative; overflow: hidden;
+  margin-bottom: 12px;
+}
+.gallery-main img {
+  width: 70%; height: 70%;
+  object-fit: contain;
+  transition: transform .4s cubic-bezier(.34,1.56,.64,1);
+}
+.gallery-main:hover img { transform: scale(1.06); }
+.gallery-badge {
+  position: absolute; top: 16px; left: 16px;
+  background: var(--accent); color: #1a1000;
+  font-size: 11px; font-weight: 700;
+  padding: 4px 10px; border-radius: 99px;
+  letter-spacing: 0.04em; text-transform: uppercase;
+}
+.gallery-badge.sale { background: #e55; color: #fff; }
+.gallery-thumb-row {
+  display: flex; gap: 8px;
+}
+.gallery-thumb {
+  flex: 1; aspect-ratio: 1;
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer; overflow: hidden;
+  transition: border-color .2s;
+}
+.gallery-thumb.active { border-color: var(--accent); }
+.gallery-thumb:hover { border-color: var(--border2); }
+.gallery-thumb img { width: 65%; height: 65%; object-fit: contain; }
+
+/* ── PRODUCT INFO ── */
+.product-info { padding-left: 48px; }
+.brand-chip {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: var(--bg3); border: 1px solid var(--border);
+  border-radius: 99px; padding: 4px 12px 4px 8px;
+  font-size: 12px; color: var(--text2);
+  margin-bottom: 16px;
+}
+.brand-dot {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--accent);
+}
+.product-title {
+  font-family: 'Syne', sans-serif;
+  font-size: 30px; font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+  margin-bottom: 6px;
+  color: var(--text);
+}
+.product-subtitle {
+  font-size: 14px; color: var(--text2); margin-bottom: 20px;
+}
+
+/* stock */
+.stock-row { display: flex; align-items: center; gap: 8px; margin-bottom: 20px; }
+.stock-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--green); animation: pulse 2s infinite; }
+@keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.6;transform:scale(.85)} }
+.stock-text { font-size: 13px; color: var(--green); font-weight: 500; }
+.stock-sku { font-size: 12px; color: var(--text3); margin-left: 4px; }
+
+/* pricing */
+.price-block { margin-bottom: 24px; }
+.price-main {
+  font-family: 'Syne', sans-serif;
+  font-size: 38px; font-weight: 800;
+  letter-spacing: -0.03em;
+  color: var(--text);
+  line-height: 1;
+}
+.price-mrp {
+  font-size: 16px; color: var(--text3);
+  text-decoration: line-through;
+  margin-left: 10px;
+}
+.price-save {
+  display: inline-block;
+  background: rgba(76,175,125,0.12);
+  color: var(--green); border: 1px solid rgba(76,175,125,0.2);
+  font-size: 12px; font-weight: 600;
+  padding: 3px 10px; border-radius: 99px;
+  margin-left: 10px; vertical-align: middle;
+}
+.emi-row {
+  margin-top: 8px;
+  font-size: 13px; color: var(--text2);
+}
+.emi-row strong { color: var(--accent); }
+
+/* color picker */
+.picker-label {
+  font-size: 12px; font-weight: 500;
+  color: var(--text3); text-transform: uppercase;
+  letter-spacing: .06em; margin-bottom: 8px;
+}
+.color-row { display: flex; gap: 8px; margin-bottom: 20px; flex-wrap: wrap; }
+.color-btn {
+  display: flex; align-items: center; gap: 7px;
+  padding: 7px 13px; border-radius: 99px;
+  border: 1px solid var(--border);
+  font-size: 13px; cursor: pointer;
+  background: var(--bg2); color: var(--text2);
+  transition: all .2s; font-family: 'DM Sans', sans-serif;
+}
+.color-btn .swatch {
+  width: 12px; height: 12px; border-radius: 50%;
+}
+.color-btn.active { border-color: var(--accent); color: var(--text); background: var(--bg3); }
+.color-btn:hover { border-color: var(--border2); color: var(--text); }
+
+/* storage picker */
+.storage-row { display: flex; gap: 8px; margin-bottom: 24px; }
+.storage-btn {
+  padding: 8px 18px; border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  font-size: 13px; font-weight: 500; cursor: pointer;
+  background: var(--bg2); color: var(--text2);
+  transition: all .2s; font-family: 'DM Sans', sans-serif;
+}
+.storage-btn.active { border-color: var(--accent); color: var(--accent); background: rgba(232,184,109,0.06); }
+.storage-btn:hover { border-color: var(--border2); color: var(--text); }
+
+/* CTA */
+.cta-row { display: flex; gap: 10px; margin-bottom: 20px; }
+.btn {
+  flex: 1; padding: 14px 20px; border-radius: var(--radius-sm);
+  font-size: 14px; font-weight: 600; cursor: pointer;
+  border: none; font-family: 'DM Sans', sans-serif;
+  display: flex; align-items: center; justify-content: center; gap: 8px;
+  transition: all .2s; letter-spacing: 0.01em;
+}
+.btn-primary {
+  background: var(--accent); color: #18100a;
+}
+.btn-primary:hover { background: #f0c87a; transform: translateY(-1px); }
+.btn-wa {
+  background: #1a472a; color: #4caf7d;
+  border: 1px solid rgba(76,175,125,0.25);
+  flex: 0 0 auto; padding: 14px 18px;
+}
+.btn-wa:hover { background: #1e5530; }
+.btn-wish {
+  background: var(--bg2); color: var(--text2);
+  border: 1px solid var(--border);
+  flex: 0 0 auto; padding: 14px 18px;
+}
+.btn-wish:hover { border-color: var(--border2); color: var(--text); }
+
+/* key specs strip */
+.key-specs {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: 8px; margin-bottom: 24px;
+}
+.spec-chip {
+  background: var(--bg2); border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 10px 12px; text-align: center;
+}
+.spec-chip-val { font-size: 14px; font-weight: 600; color: var(--text); line-height: 1.2; }
+.spec-chip-key { font-size: 10px; color: var(--text3); margin-top: 3px; text-transform: uppercase; letter-spacing: .05em; }
+
+/* trust badges */
+.trust-row {
+  display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 24px;
+}
+.trust-badge {
+  display: flex; align-items: center; gap: 5px;
+  font-size: 12px; color: var(--text2);
+  background: var(--bg2); border: 1px solid var(--border);
+  border-radius: 99px; padding: 5px 11px;
+}
+.trust-icon { font-size: 13px; }
+
+/* EMI dropdown */
+.emi-block {
+  background: var(--bg2); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 16px;
+  margin-bottom: 24px;
+}
+.emi-title {
+  font-size: 13px; font-weight: 600; color: var(--text);
+  margin-bottom: 12px; display: flex; align-items: center; gap: 6px;
+}
+.emi-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+.emi-card {
+  background: var(--bg3); border: 1px solid var(--border);
+  border-radius: var(--radius-sm); padding: 10px;
+  text-align: center; cursor: pointer; transition: all .2s;
+}
+.emi-card:hover { border-color: var(--accent); }
+.emi-card.active { border-color: var(--accent); background: rgba(232,184,109,0.06); }
+.emi-card-mo { font-size: 15px; font-weight: 700; color: var(--accent); line-height: 1.1; }
+.emi-card-dur { font-size: 11px; color: var(--text3); margin-top: 3px; }
+
+/* ── SPECS SECTION ── */
+.specs-section {
+  max-width: 1280px; margin: 0 auto;
+  padding: 0 24px 80px;
+}
+.section-heading {
+  font-family: 'Syne', sans-serif;
+  font-size: 22px; font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 24px;
+  color: var(--text);
+  padding-top: 48px;
+  border-top: 1px solid var(--border);
+}
+.section-heading span { color: var(--accent); }
+
+/* spec accordion groups */
+.spec-groups { display: flex; flex-direction: column; gap: 4px; }
+.spec-group {
+  background: var(--bg2); border: 1px solid var(--border);
+  border-radius: var(--radius); overflow: hidden;
+}
+.spec-group-header {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 14px 20px; cursor: pointer;
+  transition: background .15s;
+  user-select: none;
+}
+.spec-group-header:hover { background: var(--bg3); }
+.spec-group-title {
+  font-size: 13px; font-weight: 600;
+  color: var(--text); letter-spacing: .02em;
+  text-transform: uppercase;
+  display: flex; align-items: center; gap: 10px;
+}
+.spec-group-icon {
+  width: 28px; height: 28px; border-radius: 8px;
+  background: var(--bg3); border: 1px solid var(--border);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 13px;
+}
+.spec-group-arrow {
+  font-size: 12px; color: var(--text3);
+  transition: transform .25s;
+}
+.spec-group.open .spec-group-arrow { transform: rotate(180deg); }
+.spec-group-body {
+  display: none; padding: 0 20px 16px;
+}
+.spec-group.open .spec-group-body { display: block; }
+.spec-table { width: 100%; border-collapse: collapse; }
+.spec-table tr { border-bottom: 1px solid var(--border); }
+.spec-table tr:last-child { border-bottom: none; }
+.spec-table td {
+  padding: 10px 0; font-size: 13.5px; vertical-align: top;
+  line-height: 1.55;
+}
+.spec-table td:first-child {
+  color: var(--text3); width: 38%;
+  font-size: 12.5px; padding-right: 16px;
+}
+.spec-table td:last-child { color: var(--text); }
+.spec-highlight {
+  display: inline-block;
+  background: rgba(232,184,109,0.1);
+  color: var(--accent); border: 1px solid rgba(232,184,109,0.2);
+  font-size: 11px; font-weight: 600;
+  padding: 2px 8px; border-radius: 99px; margin-left: 6px;
+}
+
+/* in the box */
+.box-items { display: flex; flex-wrap: wrap; gap: 8px; padding-top: 4px; }
+.box-item {
+  background: var(--bg3); border: 1px solid var(--border);
+  border-radius: var(--radius-sm); padding: 8px 14px;
+  font-size: 13px; color: var(--text2);
+  display: flex; align-items: center; gap: 6px;
+}
+
+/* warranty block */
+.warranty-block {
+  background: var(--bg2); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 20px 24px;
+  margin-top: 24px;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 20px;
+}
+.w-item { }
+.w-label { font-size: 11px; color: var(--text3); text-transform: uppercase; letter-spacing: .06em; margin-bottom: 4px; }
+.w-val { font-size: 14px; color: var(--text); font-weight: 500; }
+
+/* responsive */
+@media (max-width: 900px) {
+  .hero { grid-template-columns: 1fr; gap: 32px; }
+  .product-info { padding-left: 0; }
+  .gallery { position: static; }
+  .key-specs { grid-template-columns: repeat(2, 1fr); }
+  .emi-grid { grid-template-columns: repeat(2, 1fr); }
+  .product-title { font-size: 26px; }
+}
+@media (max-width: 600px) {
+  .nav { padding: 0 16px; }
+  .hero { padding: 24px 16px; }
+  .specs-section { padding: 0 16px 60px; }
+  .cta-row { flex-wrap: wrap; }
+  .btn-wa, .btn-wish { flex: 1; }
+  .key-specs { grid-template-columns: repeat(2,1fr); }
+  .product-title { font-size: 22px; }
+  .price-main { font-size: 30px; }
+  .warranty-block { grid-template-columns: 1fr; gap: 12px; }
+  .nav-breadcrumb { display: none; }
+}
+
+/* entry animation */
+@keyframes fadeUp {
+  from { opacity:0; transform:translateY(18px); }
+  to   { opacity:1; transform:translateY(0); }
+}
+.product-info > * { animation: fadeUp .45s both; }
+.product-info > *:nth-child(1){animation-delay:.05s}
+.product-info > *:nth-child(2){animation-delay:.10s}
+.product-info > *:nth-child(3){animation-delay:.15s}
+.product-info > *:nth-child(4){animation-delay:.20s}
+.product-info > *:nth-child(5){animation-delay:.25s}
+.product-info > *:nth-child(6){animation-delay:.30s}
+.product-info > *:nth-child(7){animation-delay:.35s}
+.product-info > *:nth-child(8){animation-delay:.40s}
+.product-info > *:nth-child(9){animation-delay:.45s}
+.product-info > *:nth-child(10){animation-delay:.50s}
+.product-info > *:nth-child(11){animation-delay:.55s}
+.gallery { animation: fadeUp .4s .02s both; }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <a class="nav-logo" href="#">Phono<span>range</span></a>
+  <nav class="nav-breadcrumb">
+    <a href="#">Home</a><span>/</span>
+    <a href="#">Mobiles</a><span>/</span>
+    <a href="#">Apple</a><span>/</span>
+    <span style="color:var(--text2)">iPhone 16 Pro</span>
+  </nav>
+  <div class="nav-right">
+    <button class="nav-btn">&#9825; Wishlist</button>
+    <button class="nav-btn primary">🛒 Cart (0)</button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+
+  <!-- Gallery -->
+  <div class="gallery">
+    <div class="gallery-main">
+      <span class="gallery-badge sale">Save ₹10,000</span>
+      <img id="mainImg"
+        src="https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/iphone-16-pro-finish-select-202409-6-3inch-blacktitanium?wid=5120&hei=2880&fmt=p-jpg&qlt=80&.v=1726770916305"
+        alt="iPhone 16 Pro Black Titanium"
+        onerror="this.src='https://via.placeholder.com/500x500/111113/444?text=iPhone+16+Pro'">
+    </div>
+    <div class="gallery-thumb-row">
+      <div class="gallery-thumb active" onclick="setImg(this,'https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/iphone-16-pro-finish-select-202409-6-3inch-blacktitanium?wid=5120&hei=2880&fmt=p-jpg&qlt=80&.v=1726770916305')">
+        <img src="https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/iphone-16-pro-finish-select-202409-6-3inch-blacktitanium?wid=5120&hei=2880&fmt=p-jpg&qlt=80&.v=1726770916305" alt="" onerror="this.src='https://via.placeholder.com/80x80/111?text=1'">
+      </div>
+      <div class="gallery-thumb" onclick="setImg(this,'https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/iphone-16-pro-finish-select-202409-6-3inch-desertTitanium?wid=5120&hei=2880&fmt=p-jpg&qlt=80&.v=1727211714026')">
+        <img src="https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/iphone-16-pro-finish-select-202409-6-3inch-desertTitanium?wid=5120&hei=2880&fmt=p-jpg&qlt=80&.v=1727211714026" alt="" onerror="this.src='https://via.placeholder.com/80x80/222?text=2'">
+      </div>
+      <div class="gallery-thumb" onclick="setImg(this,'https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/iphone-16-pro-finish-select-202409-6-3inch-naturaltitanium?wid=5120&hei=2880&fmt=p-jpg&qlt=80&.v=1726770916305')">
+        <img src="https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/iphone-16-pro-finish-select-202409-6-3inch-naturaltitanium?wid=5120&hei=2880&fmt=p-jpg&qlt=80&.v=1726770916305" alt="" onerror="this.src='https://via.placeholder.com/80x80/333?text=3'">
+      </div>
+      <div class="gallery-thumb" onclick="setImg(this,'https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/iphone-16-pro-finish-select-202409-6-3inch-whitetitanium?wid=5120&hei=2880&fmt=p-jpg&qlt=80&.v=1726770916307')">
+        <img src="https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/iphone-16-pro-finish-select-202409-6-3inch-whitetitanium?wid=5120&hei=2880&fmt=p-jpg&qlt=80&.v=1726770916307" alt="" onerror="this.src='https://via.placeholder.com/80x80/ddd/333?text=4'">
+      </div>
+    </div>
+  </div>
+
+  <!-- Product Info -->
+  <div class="product-info">
+    <div class="brand-chip"><span class="brand-dot"></span>Apple · iPhone</div>
+
+    <h1 class="product-title">iPhone 16 Pro<br>256GB</h1>
+    <p class="product-subtitle">A19 chip · 48MP Fusion Camera · ProMotion · Dynamic Island</p>
+
+    <div class="stock-row">
+      <span class="stock-dot"></span>
+      <span class="stock-text">In stock</span>
+      <span class="stock-sku">SKU: APL-IP16P-256-BLK</span>
+    </div>
+
+    <div class="price-block">
+      <div>
+        <span class="price-main">₹1,09,900</span>
+        <span class="price-mrp">₹1,19,900</span>
+        <span class="price-save">Save ₹10,000</span>
+      </div>
+      <div class="emi-row">No-Cost EMI from <strong>₹9,158/mo</strong> × 12 months</div>
+    </div>
+
+    <!-- Color picker -->
+    <div class="picker-label">Color</div>
+    <div class="color-row">
+      <button class="color-btn active" onclick="selectColor(this,'Black Titanium','#2c2c2e')">
+        <span class="swatch" style="background:#2c2c2e;border:1px solid #555"></span>Black Titanium
+      </button>
+      <button class="color-btn" onclick="selectColor(this,'Desert Titanium','#c9a96e')">
+        <span class="swatch" style="background:#c9a96e"></span>Desert Titanium
+      </button>
+      <button class="color-btn" onclick="selectColor(this,'Natural Titanium','#9e9e8e')">
+        <span class="swatch" style="background:#9e9e8e"></span>Natural Titanium
+      </button>
+      <button class="color-btn" onclick="selectColor(this,'White Titanium','#e8e8e0;border:1px solid #999')">
+        <span class="swatch" style="background:#e8e8e0;border:1px solid #555"></span>White Titanium
+      </button>
+    </div>
+
+    <!-- Storage picker -->
+    <div class="picker-label">Storage</div>
+    <div class="storage-row">
+      <button class="storage-btn active" onclick="selectStorage(this,'256GB','109900')">256GB</button>
+      <button class="storage-btn" onclick="selectStorage(this,'512GB','129900')">512GB</button>
+      <button class="storage-btn" onclick="selectStorage(this,'1TB','149900')">1TB</button>
+    </div>
+
+    <!-- Key specs strip -->
+    <div class="key-specs">
+      <div class="spec-chip"><div class="spec-chip-val">6.3"</div><div class="spec-chip-key">Display</div></div>
+      <div class="spec-chip"><div class="spec-chip-val">48MP</div><div class="spec-chip-key">Main cam</div></div>
+      <div class="spec-chip"><div class="spec-chip-val">A19</div><div class="spec-chip-key">Chip</div></div>
+      <div class="spec-chip"><div class="spec-chip-val">IP68</div><div class="spec-chip-key">Water resist</div></div>
+    </div>
+
+    <!-- CTA -->
+    <div class="cta-row">
+      <button class="btn btn-primary" onclick="addToCart()">
+        🛒 Add to cart
+      </button>
+      <button class="btn btn-wa" onclick="orderWA()" title="Order via WhatsApp">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="#4caf7d"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.136.562 4.14 1.541 5.873L0 24l6.322-1.508A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.018-1.375l-.36-.214-3.732.89.935-3.63-.234-.373A9.772 9.772 0 012.182 12C2.182 6.58 6.58 2.182 12 2.182S21.818 6.58 21.818 12 17.42 21.818 12 21.818z"/></svg>
+        WhatsApp
+      </button>
+      <button class="btn btn-wish" onclick="toggleWish(this)" title="Wishlist">
+        &#9825;
+      </button>
+    </div>
+
+    <!-- Trust badges -->
+    <div class="trust-row">
+      <span class="trust-badge"><span class="trust-icon">✓</span>1 yr Apple warranty</span>
+      <span class="trust-badge"><span class="trust-icon">↩</span>7-day returns</span>
+      <span class="trust-badge"><span class="trust-icon">🏬</span>50+ stores</span>
+      <span class="trust-badge"><span class="trust-icon">⚡</span>Same-day dispatch</span>
+    </div>
+
+    <!-- EMI block -->
+    <div class="emi-block">
+      <div class="emi-title">
+        <span style="font-size:15px">💳</span> No-cost EMI options
+      </div>
+      <div class="emi-grid">
+        <div class="emi-card active" onclick="setEmi(this,3)"><div class="emi-card-mo" id="emi3">₹36,633</div><div class="emi-card-dur">3 months</div></div>
+        <div class="emi-card" onclick="setEmi(this,6)"><div class="emi-card-mo" id="emi6">₹18,317</div><div class="emi-card-dur">6 months</div></div>
+        <div class="emi-card" onclick="setEmi(this,12)"><div class="emi-card-mo" id="emi12">₹9,158</div><div class="emi-card-dur">12 months</div></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- FULL SPECS -->
+<section class="specs-section">
+  <h2 class="section-heading">Full <span>specifications</span></h2>
+
+  <div class="spec-groups">
+
+    <div class="spec-group open">
+      <div class="spec-group-header" onclick="toggleGroup(this)">
+        <div class="spec-group-title"><span class="spec-group-icon">📶</span>Network & SIM</div>
+        <span class="spec-group-arrow">▼</span>
+      </div>
+      <div class="spec-group-body">
+        <table class="spec-table">
+          <tr><td>Network type</td><td>2G / 3G / 4G LTE / 5G / VoLTE<span class="spec-highlight">5G</span></td></tr>
+          <tr><td>SIM type</td><td>Dual SIM — nano-SIM + eSIM · Dual eSIM support</td></tr>
+          <tr><td>SIM slots</td><td>1 nano-SIM + 1 eSIM (or 2 eSIM)</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="spec-group">
+      <div class="spec-group-header" onclick="toggleGroup(this)">
+        <div class="spec-group-title"><span class="spec-group-icon">🖥</span>Display</div>
+        <span class="spec-group-arrow">▼</span>
+      </div>
+      <div class="spec-group-body">
+        <table class="spec-table">
+          <tr><td>Size</td><td>6.3 inch (15.93 cm)<span class="spec-highlight">Super Retina XDR</span></td></tr>
+          <tr><td>Type</td><td>OLED ProMotion · Always-On display · Dynamic Island</td></tr>
+          <tr><td>Refresh rate</td><td>Up to 120Hz (ProMotion adaptive)</td></tr>
+          <tr><td>Resolution</td><td>2622 × 1206 px at 460 ppi</td></tr>
+          <tr><td>Brightness</td><td>1,000 nits typical · 1,600 nits HDR · 3,000 nits outdoor</td></tr>
+          <tr><td>Protection</td><td>Ceramic Shield front glass · Textured matte back glass</td></tr>
+          <tr><td>Multitouch</td><td>Yes</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="spec-group">
+      <div class="spec-group-header" onclick="toggleGroup(this)">
+        <div class="spec-group-title"><span class="spec-group-icon">⚡</span>Performance</div>
+        <span class="spec-group-arrow">▼</span>
+      </div>
+      <div class="spec-group-body">
+        <table class="spec-table">
+          <tr><td>Chipset</td><td>Apple A19 Pro<span class="spec-highlight">Latest</span></td></tr>
+          <tr><td>CPU</td><td>6-core CPU (2 performance + 4 efficiency)</td></tr>
+          <tr><td>GPU</td><td>6-core GPU</td></tr>
+          <tr><td>Neural engine</td><td>16-core Neural Engine</td></tr>
+          <tr><td>RAM</td><td>8GB</td></tr>
+          <tr><td>Storage</td><td>256GB (no expandable storage)</td></tr>
+          <tr><td>Operating system</td><td>iOS 18 (upgradable to iOS 26)</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="spec-group">
+      <div class="spec-group-header" onclick="toggleGroup(this)">
+        <div class="spec-group-title"><span class="spec-group-icon">📷</span>Camera</div>
+        <span class="spec-group-arrow">▼</span>
+      </div>
+      <div class="spec-group-body">
+        <table class="spec-table">
+          <tr><td>Main camera</td><td>48MP Fusion (f/1.78) + 48MP Ultra Wide (f/2.2)<span class="spec-highlight">48MP</span></td></tr>
+          <tr><td>Telephoto</td><td>12MP 5× optical zoom Tetraprism (f/2.8)</td></tr>
+          <tr><td>Front camera</td><td>18MP TrueDepth · Centre Stage · f/1.9 autofocus</td></tr>
+          <tr><td>Video</td><td>4K at 60fps Dolby Vision HDR (QuickTake)</td></tr>
+          <tr><td>Slow motion</td><td>1080p at 240fps · 4K at 120fps (ProRes)</td></tr>
+          <tr><td>Features</td><td>Centre Stage · Dual Capture · Ultra Stabilised · Macro · Night mode · Deep Fusion · Smart HDR 5</td></tr>
+          <tr><td>Flash</td><td>Adaptive True Tone flash with Slow Sync</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="spec-group">
+      <div class="spec-group-header" onclick="toggleGroup(this)">
+        <div class="spec-group-title"><span class="spec-group-icon">📡</span>Connectivity</div>
+        <span class="spec-group-arrow">▼</span>
+      </div>
+      <div class="spec-group-body">
+        <table class="spec-table">
+          <tr><td>Wi-Fi</td><td>Wi-Fi 7 (802.11be) · 2.4GHz + 5GHz + 6GHz<span class="spec-highlight">Wi-Fi 7</span></td></tr>
+          <tr><td>Bluetooth</td><td>v6.0</td></tr>
+          <tr><td>USB</td><td>USB-C (USB 2.0) · Supports DisplayPort · USB 3 with cable</td></tr>
+          <tr><td>NFC</td><td>Yes — reader, emulation, and peer-to-peer modes</td></tr>
+          <tr><td>GPS</td><td>GPS · GLONASS · Galileo · BeiDou · QZSS · NavIC</td></tr>
+          <tr><td>Ultra Wideband</td><td>Yes (U1 chip for Precision Finding)</td></tr>
+          <tr><td>Satellite</td><td>Emergency SOS via satellite · Roadside Assistance via satellite</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="spec-group">
+      <div class="spec-group-header" onclick="toggleGroup(this)">
+        <div class="spec-group-title"><span class="spec-group-icon">🔋</span>Battery</div>
+        <span class="spec-group-arrow">▼</span>
+      </div>
+      <div class="spec-group-body">
+        <table class="spec-table">
+          <tr><td>Type</td><td>Built-in rechargeable lithium-ion</td></tr>
+          <tr><td>Wireless charging</td><td>MagSafe up to 25W · Qi2 · Qi<span class="spec-highlight">MagSafe</span></td></tr>
+          <tr><td>Fast charge</td><td>Up to 25W with 30W adapter or higher (sold separately)</td></tr>
+          <tr><td>Video playback</td><td>Up to 30 hours</td></tr>
+          <tr><td>Video streaming</td><td>Up to 25 hours</td></tr>
+          <tr><td>Audio playback</td><td>Up to 95 hours</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="spec-group">
+      <div class="spec-group-header" onclick="toggleGroup(this)">
+        <div class="spec-group-title"><span class="spec-group-icon">📐</span>Design & build</div>
+        <span class="spec-group-arrow">▼</span>
+      </div>
+      <div class="spec-group-body">
+        <table class="spec-table">
+          <tr><td>Dimensions</td><td>71.5 × 149.6 × 7.95 mm</td></tr>
+          <tr><td>Weight</td><td>177 g</td></tr>
+          <tr><td>Build material</td><td>Grade 5 Titanium frame · Textured matte back glass</td></tr>
+          <tr><td>Colors</td><td>Black Titanium · Desert Titanium · Natural Titanium · White Titanium</td></tr>
+          <tr><td>Water resistance</td><td>IP68 — 6 metres for 30 minutes (IEC 60529)<span class="spec-highlight">IP68</span></td></tr>
+          <tr><td>Action button</td><td>Yes (customisable)</td></tr>
+          <tr><td>Camera control</td><td>Yes (dedicated hardware button)</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="spec-group">
+      <div class="spec-group-header" onclick="toggleGroup(this)">
+        <div class="spec-group-title"><span class="spec-group-icon">🔊</span>Audio & sensors</div>
+        <span class="spec-group-arrow">▼</span>
+      </div>
+      <div class="spec-group-body">
+        <table class="spec-table">
+          <tr><td>Speaker</td><td>Built-in stereo speakers (portrait and landscape)</td></tr>
+          <tr><td>3.5mm jack</td><td>No</td></tr>
+          <tr><td>Spatial audio</td><td>Yes · Dolby Atmos</td></tr>
+          <tr><td>Sensors</td><td>Face ID · High dynamic range gyro · High-g accelerometer · Barometer · Proximity sensor · Dual ambient light sensors</td></tr>
+          <tr><td>Safety</td><td>Emergency SOS · Crash Detection · Satellite messaging</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="spec-group">
+      <div class="spec-group-header" onclick="toggleGroup(this)">
+        <div class="spec-group-title"><span class="spec-group-icon">📦</span>In the box</div>
+        <span class="spec-group-arrow">▼</span>
+      </div>
+      <div class="spec-group-body" style="padding-top:12px">
+        <div class="box-items">
+          <div class="box-item">📱 iPhone 16 Pro handset</div>
+          <div class="box-item">🔌 USB-C Charge Cable (1 m)</div>
+          <div class="box-item">📄 Documentation</div>
+        </div>
+        <p style="font-size:12px;color:var(--text3);margin-top:12px">Power adapter and EarPods not included. MagSafe accessories sold separately.</p>
+      </div>
+    </div>
+
+    <div class="spec-group">
+      <div class="spec-group-header" onclick="toggleGroup(this)">
+        <div class="spec-group-title"><span class="spec-group-icon">🏭</span>Manufacturing info</div>
+        <span class="spec-group-arrow">▼</span>
+      </div>
+      <div class="spec-group-body">
+        <table class="spec-table">
+          <tr><td>Generic name</td><td>Mobile Phone / Smartphone</td></tr>
+          <tr><td>Country of origin</td><td>China (assembled) / India (India-made variants)</td></tr>
+          <tr><td>Manufactured by</td><td>Apple Inc., One Apple Park Way, Cupertino, CA 95014, USA</td></tr>
+          <tr><td>Imported by</td><td>Apple India Private Limited, No.24, 19th Floor, Concorde Tower C, UB City, Vittal Mallya Road, Bangalore – 560 001</td></tr>
+          <tr><td>Packed by</td><td>Apple India Private Limited, Bangalore – 560 001</td></tr>
+        </table>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Warranty block -->
+  <div class="warranty-block">
+    <div class="w-item">
+      <div class="w-label">Handset warranty</div>
+      <div class="w-val">1 year manufacturer warranty (Apple)</div>
+    </div>
+    <div class="w-item">
+      <div class="w-label">Accessories warranty</div>
+      <div class="w-val">6 months warranty on in-box accessories</div>
+    </div>
+    <div class="w-item">
+      <div class="w-label">Service centres</div>
+      <div class="w-val">50+ Phonorange stores across Karnataka</div>
+    </div>
+    <div class="w-item">
+      <div class="w-label">Extended warranty</div>
+      <div class="w-val">AppleCare+ available — ask in store</div>
+    </div>
+  </div>
+
+</section>
+
+<script>
+var currentPrice = 109900;
+var currentColor = 'Black Titanium';
+
+function setImg(thumb, src) {
+  document.getElementById('mainImg').src = src;
+  document.querySelectorAll('.gallery-thumb').forEach(t => t.classList.remove('active'));
+  thumb.classList.add('active');
+}
+
+function selectColor(btn, color, swatch) {
+  document.querySelectorAll('.color-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  currentColor = color;
+}
+
+function selectStorage(btn, storage, price) {
+  document.querySelectorAll('.storage-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  currentPrice = parseInt(price);
+  var mrp = currentPrice + 10000;
+  document.querySelector('.price-main').textContent = '₹' + currentPrice.toLocaleString('en-IN');
+  document.querySelector('.price-mrp').textContent = '₹' + mrp.toLocaleString('en-IN');
+  var save = mrp - currentPrice;
+  document.querySelector('.price-save').textContent = 'Save ₹' + save.toLocaleString('en-IN');
+  updateEmi();
+}
+
+function updateEmi() {
+  document.getElementById('emi3').textContent = '₹' + Math.round(currentPrice/3).toLocaleString('en-IN');
+  document.getElementById('emi6').textContent = '₹' + Math.round(currentPrice/6).toLocaleString('en-IN');
+  document.getElementById('emi12').textContent = '₹' + Math.round(currentPrice/12).toLocaleString('en-IN');
+  document.querySelector('.emi-row strong').textContent = '₹' + Math.round(currentPrice/12).toLocaleString('en-IN') + '/mo';
+}
+
+function setEmi(card, months) {
+  document.querySelectorAll('.emi-card').forEach(c => c.classList.remove('active'));
+  card.classList.add('active');
+}
+
+function toggleGroup(header) {
+  var group = header.parentElement;
+  group.classList.toggle('open');
+}
+
+function addToCart() {
+  var btn = document.querySelector('.btn-primary');
+  btn.textContent = '✓ Added to cart!';
+  btn.style.background = 'var(--green)';
+  btn.style.color = '#fff';
+  setTimeout(function() {
+    btn.innerHTML = '🛒 Add to cart';
+    btn.style.background = '';
+    btn.style.color = '';
+  }, 2200);
+}
+
+function orderWA() {
+  var msg = 'Hello Phonorange! 👋\n\nI want to order:\n📱 *Apple iPhone 16 Pro 256GB ' + currentColor + '*\n💰 Price: ₹' + currentPrice.toLocaleString('en-IN') + '\n\nPlease confirm availability. Thank you!';
+  window.open('https://wa.me/918951885383?text=' + encodeURIComponent(msg), '_blank');
+}
+
+function toggleWish(btn) {
+  if (btn.textContent === '♡') {
+    btn.textContent = '♥';
+    btn.style.color = '#e55';
+  } else {
+    btn.textContent = '♡';
+    btn.style.color = '';
+  }
+}
+</script>
+</body>
+</html>
